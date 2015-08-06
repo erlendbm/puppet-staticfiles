@@ -56,6 +56,7 @@ directly to it.
 
 Hiera sample:
 
+```puppet
 staticfiles::staticfiles:
   'root':
     path:    '/root'
@@ -69,7 +70,7 @@ staticfiles::staticfiles:
     group:   root
     mode:    0644
     source:  'puppet:///staticfiles/root/dot.bashrc.ebm'
-
+```
 
 ## Reference
 
