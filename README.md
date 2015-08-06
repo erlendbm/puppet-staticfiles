@@ -15,9 +15,7 @@
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+This is a Puppet module to distribute static files.
 
 ## Module Description
 
@@ -53,8 +51,25 @@ for upgrading, you may wish to include an additional section here: Upgrading
 
 ## Usage
 
-Put the classes, types, and resources for customizing, configuring, and doing
-the fancy stuff with your module here.
+This is really a frontend for the "file" type.  All parameters are sent
+directly to it.
+
+Hiera sample:
+
+staticfiles::staticfiles:
+  'root':
+    path:    '/root'
+    owner:   root
+    group:   root
+    mode:    0700
+    ensure:  directory
+  'root.dot.bashrc.ebm':
+    path:    '/root/.bashrc.ebm'
+    owner:   root
+    group:   root
+    mode:    0644
+    source:  'puppet:///staticfiles/root/dot.bashrc.ebm'
+
 
 ## Reference
 
